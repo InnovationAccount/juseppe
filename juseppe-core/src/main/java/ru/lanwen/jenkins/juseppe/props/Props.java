@@ -49,6 +49,9 @@ public final class Props {
     @Property(JuseppeEnvVars.JUSEPPE_UC_JSON_NAME)
     private String ucJsonName = "update-center.json";
 
+    @Property(JuseppeEnvVars.JUSEPPE_PV_JSON_NAME)
+    private String pvJsonName = "plugin-versions.json";
+
     @Property(JuseppeEnvVars.JUSEPPE_RELEASE_HISTORY_JSON_NAME)
     private String releaseHistoryJsonName = "release-history.json";
 
@@ -83,6 +86,9 @@ public final class Props {
 
     public String getUcJsonName() {
         return ucJsonName;
+    }
+    public String getPvJsonName() {
+        return pvJsonName;
     }
 
     public URI getBaseurl() {
@@ -129,6 +135,11 @@ public final class Props {
 
     public Props withUcJsonName(String ucJsonName) {
         this.ucJsonName = ucJsonName;
+        return this;
+    }
+
+    public Props withPvJsonName(String pvJsonName) {
+        this.pvJsonName = pvJsonName;
         return this;
     }
 

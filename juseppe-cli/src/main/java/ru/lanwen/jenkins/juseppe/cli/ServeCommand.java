@@ -63,6 +63,10 @@ public class ServeCommand extends JuseppeCommand {
                 new ServletHolder("release-history",
                 new DefaultServlet()), "/" + props.getReleaseHistoryJsonName()
         );
+        context.addServlet(
+                new ServletHolder("plugin-versions", new DefaultServlet()),
+                "/" + props.getPvJsonName()
+        );
         context.addServlet(new ServletHolder("plugins-hpi", new DefaultServlet()), HPI_EXT);
         context.addServlet(new ServletHolder("plugins-jpi", new DefaultServlet()), JPI_EXT);
 

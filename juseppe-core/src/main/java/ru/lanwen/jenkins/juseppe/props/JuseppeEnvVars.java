@@ -19,6 +19,7 @@ public final class JuseppeEnvVars {
     static final String JUSEPPE_BIND_PORT = "juseppe.jetty.port";
     static final String JUSEPPE_BIND_HOST = "juseppe.jetty.host";
     static final String JUSEPPE_RECURSIVE_WATCH = "juseppe.recursive.watch";
+    static final String JUSEPPE_PV_JSON_NAME = "juseppe.pv.json.name";
 
     private JuseppeEnvVars() {
         throw new IllegalAccessError();
@@ -72,6 +73,16 @@ public final class JuseppeEnvVars {
             @Override
             public String resolved() {
                 return populated().getUcJsonName();
+            }
+        },
+
+        JUSEPPE_PV_JSON_NAME(
+                JuseppeEnvVars.JUSEPPE_PV_JSON_NAME,
+                "name of plugin version json file, not auto generated yet. Defaults to `plugin-versions.json`"
+        ) {
+            @Override
+            public String resolved() {
+                return populated().getPvJsonName();
             }
         },
 
